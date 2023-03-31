@@ -17,18 +17,30 @@
 import pdb
 import sys
 import math
+import product
 
 ####################################################################################################
 #   Variables
 coffee_menu {
-    "A": ["large black coffee", 2.00]
-    "B": ["Chai Tea", 3.00]
+    "A": Product("Small Black Coffee", "Coffee", "Premium blended black coffee - 10 oz", 1.00),
+    "B": Product("Medium Black Coffee", "Coffee", "Premium blended black coffee - 16 oz", 1.50),
+    "C": Product("Large Black Coffee", "Coffee", "Premium blended black coffee - 24 oz", 2.00),
+    "D": Product("Small Chai Tea", "Tea", "Oolong and black tea blend with nilk & cinnamon - 10 oz", 1.85),
+    "E": Product("Medium Chai Tea", "Tea", "Oolong and black tea blend with nilk & cinnamon - 10 oz", 2.30),
+    "F": Product("Large Chai Tea", "Tea", "Oolong and black tea blend with nilk & cinnamon - 10 oz", 2.90),
+    "G": Product("Small Espresso", "Espresso", "Bold flavorful steam extraccted espresso - 4 oz", 1.85),
+    "H": Product("Medium Espresso", "Espresso", "Bold flavorful steam extraccted espresso - 8 oz", 2.30),
+    "I": Product("Large Espresso", "Espresso", "Bold flavorful steam extraccted espresso - 12 oz", 2.90),
+    "J": Product("Small Mocha", "Mocha", "Our bold flavorful espresso wth chocolate & steamed milk - 8 oz", 1.85),
+    "K": Product("Medium Mocha", "Mocha", "Our bold flavorful espresso wth chocolate & steamed milk - 12 oz", 2.30),
+    "L": Product("Large Mocha", "Mocha", "Our bold flavorful espresso wth chocolate & steamed milk - 20 oz", 2.90)
 }
+customer_order = {}
 
 ####################################################################################################
 #   Functions
 def pos():
-    pass
+    print("Welcome to Cuppa Joe's Coffee Shop\nMay I take your order?")
 
 ####################################################################################################
 #   Classes
