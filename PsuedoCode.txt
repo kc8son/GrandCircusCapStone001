@@ -3,8 +3,8 @@ done-define a class called Product
 done-it should have instance variables: name, category, description, and price
 done-create a (dictionary to avoid duplicate entries)list to store all the 12 products
 done-Create another empty list for cart(to keep track of what is ordered) and create a variable for total price
-r-present a menu to the user by looping through all the products
-allow the user to select an item by number or letter and ask for how many of that item
+done-present a menu to the user by looping through all the products
+done-allow the user to select an item by number or letter and ask for how many of that item
   Add the item & quantity to the empty list.
 ask the user if they want to continue shopping and redisplay the menu or complete the purchase
 r-calculate the line total for the item (item price * quantity)
