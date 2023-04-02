@@ -3,24 +3,25 @@ done-define a class called Product
 done-it should have instance variables: name, category, description, and price
 done-create a (dictionary to avoid duplicate entries)list to store all the 12 products
 done-Create another empty list for cart(to keep track of what is ordered) and create a variable for total price
-present a menu to the user by looping through all the products
+r-present a menu to the user by looping through all the products
 allow the user to select an item by number or letter and ask for how many of that item
   Add the item & quantity to the empty list.
 ask the user if they want to continue shopping and redisplay the menu or complete the purchase
-calculate the line total for the item (item price * quantity)
-add the line total to total price
-display the subtotal of all items ordered
-calculate the sales tax and add it to the subtotal which gives the grand total
+r-calculate the line total for the item (item price * quantity)
+r-add the line total to total price
+r-display the subtotal of all items ordered
+r-calculate the sales tax and add it to the subtotal which gives the grand total
+r&j - call the payment object to process payment
 
-ask the user for their payment type (cash, credit, or check)
-(enhanced option #2 - make payment type an object)
-if the payment type is cash, ask the user for the amount
+j-ask the user for their payment type (cash, credit, or check)
+j-(enhanced option #2 - make payment type an object)
+j-if the payment type is cash, ask the user for the amount
   calculate the change (amount tendered - grand total)
   display the receipt with all items ordered, subtotal, grand total, and appropriate payment info including change
-if the payment type is credit, ask the user for the credit card number, expiration, and CVV
+j-if the payment type is credit, ask the user for the credit card number, expiration, and CVV
   display the receipt with all items ordered, subtotal, grand total, and appropriate payment info
-if the payment type is check, ask the user for the check number
-display a receipt with all items ordered, subtotal, grand total, and appropriate payment info.
+j-if the payment type is check, ask the user for the check number
+  display a receipt with all items ordered, subtotal, grand total, and appropriate payment info.
 
-(enhanced option #1)
+(r&j-enhanced option #1)
 add an option to the menu to allow the user to add a new product to the list of products by asking user for the name, category, description, and price of the new product
