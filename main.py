@@ -18,6 +18,8 @@ import pdb
 import sys
 import math
 import product
+import payments
+import validator
 
 ####################################################################################################
 #   Variables
@@ -37,6 +39,14 @@ coffee_menu = {
 }
 customer_order = []
 total_price = 0
+test_order = [
+    ['Medium Black Coffee', 1, 1.5],
+    ['Large Black Coffee', 2, 2.0],
+    ['Small Chai Tea', 3, 1.85],
+    ['Medium Chai Tea', 4, 2.3],
+    ['Large Chai Tea', 5, 2.9]
+]
+
 ####################################################################################################
 #   Functions
 def pos():
@@ -48,6 +58,7 @@ def pos():
         get_status = get_item(coffee_menu)
     print(customer_order)
     #process payment
+    payments.Payment.payment(customer_order)
 def display_menu(my_coffee_menu):
     for i, (key, value) in enumerate(my_coffee_menu.items()):
         # print(i, key, value.name, value.description, value.price)
@@ -93,21 +104,6 @@ def get_item(my_coffee_menu):
         print("Error: Invalid input.")
         return 1
 
-    # response = input("Would you like to continue shopping? y/n ")
-    # if response.lower() == "y":
-
-
-
-
-    #     convert choice to integer
-    #     if choice is too big or too small:
-    #         error message to try again
-    # if choice is not in dictionary
-    #     error message to try again
-    # else:
-    #     error message to try again
-    # ask for quantity
-    # add choice to customer_order
 
 ####################################################################################################
 #   Classes
@@ -121,3 +117,5 @@ def get_item(my_coffee_menu):
 #   Main code
 if __name__ == '__main__':
     pos()
+    # validator.Validator.validate_pmt("Please select the payment type: (cash/card/check)")
+    # payments.Payment.payment(test_order)
