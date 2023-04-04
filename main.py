@@ -56,19 +56,33 @@ def pos():
     get_status = 1
     while get_status == 1:
         get_status = get_item(coffee_menu)
-    print(customer_order)
+    # print(customer_order)
     #process payment
     payments.Payment.payment(customer_order)
 def display_menu(my_coffee_menu):
     for i, (key, value) in enumerate(my_coffee_menu.items()):
         # print(i, key, value.name, value.description, value.price)
         print(f"{i}-{key} {value.name}- {value.description} \t${value.price:,.2f}")
+
 def get_item(my_coffee_menu):
     choice = input("Please enter a number or letter. (quit/menu) ").upper()
     if choice == "QUIT":
         return 0
     if choice == "MENU":
         display_menu(my_coffee_menu)
+        return 1
+    if choice == "ADD":
+        print("Enter Item Letter...")
+        my_index = input("> ").upper()
+        print("Enter Name...")
+        my_name = input("> ")
+        print("Enter Category...")
+        my_cat = input("> ")
+        print("Enter Description...")
+        my_desc = input("> ")
+        print("Enter Price...")
+        my_price = float(input("> "))
+        coffee_menu[my_index] = product.Product(my_name, my_cat, my_desc, my_price)
         return 1
     if choice.isdigit():
         choice = int(choice)
@@ -83,6 +97,7 @@ def get_item(my_coffee_menu):
                     quantity = int(input("How many would you like to order? "))
                     my_line = [item.name, quantity, item.price]
                     customer_order.append(my_line)
+                    print(f"{quantity} x {item.name} = ${quantity*item.price:,.2f}")
                     #print("You ordered:", customer_order)
                     return 1
             else:
