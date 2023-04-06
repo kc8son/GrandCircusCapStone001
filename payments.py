@@ -7,6 +7,15 @@
 #   imports
 import validator
 
+cup = """
+   ~
+   ~
+ .---.
+ `---'=.
+ | Joe| |
+ |    |='
+ `---'"""
+
 ####################################################################################################
 #   Classes
 class Payment():
@@ -47,7 +56,7 @@ def card_pmt(my_charge):
     my_card_date = input("> ")
     print("Please enter the card CVV:")
     my_card_cvv = input("> ")
-    print(f"\n\n\n\n\nThank you for paying  ${my_charge:,.2f} with card number: {my_card_no}")
+    print(f"\n\n\n\n\n{cup}\nThank you for paying  ${my_charge:,.2f} with card number: {my_card_no}")
 
 
 def cash_pmt(my_charge):
@@ -56,7 +65,7 @@ def cash_pmt(my_charge):
     print("Please enter the amount tendered:")
     cash_amt = float(input("> "))
     change = cash_amt - my_charge
-    print(f"\n\n\n\n\nThank you for paying  ${cash_amt:,.2f} for your purchase of ${my_charge:,.2f}, you get ${change:,.2f} in change")
+    print(f"\n\n\n\n\n{cup}\nThank you for paying  ${cash_amt:,.2f} for your purchase of ${my_charge:,.2f}, you get ${change:,.2f} in change")
 
 
 
@@ -64,4 +73,4 @@ def check_pmt(my_charge):
     """This method will proceess a check payment.  All we need to do here is ask for the check number."""
     print("Please enter the check number:")
     my_check_no = input("> ")
-    print(f"\n\n\n\n\nThank you for paying ${my_charge:,.2f} with check number: {my_check_no}")
+    print(f"\n\n\n\n\n{cup}\nThank you for paying ${my_charge:,.2f} with check number: {my_check_no}")
