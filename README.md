@@ -26,10 +26,14 @@ Files used:
 - For cash sales, validate that the amount paid is enough to cover the order
 - Validate that the credit card number is 16 digits long
 - Validate that the credit card expiration date is entered in proper format
+  - Also confirm that the card is not expired
 - If the subtotal is zero, skip payment options
 - Add validate_float to validator
 - Add validat_cash for cash payments
 - Allow repricing of an existing product
+- Allow split payments
+- Allow removing an item
+- On the receipr - display only the last 4 digits of the card.
        
 
 **Bug fixes:**
