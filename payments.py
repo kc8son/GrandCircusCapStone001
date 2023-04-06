@@ -47,7 +47,7 @@ def card_pmt(my_charge):
     my_card_date = input("> ")
     print("Please enter the card CVV:")
     my_card_cvv = input("> ")
-    print(f"\n\n\n\n\nThank you for paying  ${my_charge:,.2f}with card number: {my_card_no}")
+    print(f"\n\n\n\n\nThank you for paying  ${my_charge:,.2f} with card number: {my_card_no}")
 
 
 def cash_pmt(my_charge):

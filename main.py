@@ -12,6 +12,11 @@
 #     - Create CreditCardPayment
 #     - Create CheckPayment
 #
+#     - Future Enhancements
+#     - For cash sales, validate that the amount paid is enough to cover the order
+#     - Validate that the credit card number is 16 digits long
+#     - Validate that the expiration date is entered in proper format
+#
 ####################################################################################################
 #   imports
 import pdb
@@ -38,7 +43,7 @@ coffee_menu = {
     "L": product.Product("Large Mocha", "Mocha", "Our bold flavorful espresso wth chocolate & steamed milk - 20 oz", 2.90)
 }
 customer_order = []
-total_price = 0
+
 test_order = [
     ['Medium Black Coffee', 1, 1.5],
     ['Large Black Coffee', 2, 2.0],
@@ -49,7 +54,16 @@ test_order = [
 
 ####################################################################################################
 #   Functions
+def pos_loop():
+    while True:
+        total_price = 0
+        customer_order = []
+        pos()
+        input("Press enter to start your next order. ")
+
+
 def pos():
+    """Main logic of the system, receives items from user, and prints receipt when it is done."""
     print("Welcome to Cuppa Joe's Coffee Shop")
     display_menu(coffee_menu)
     print("May I take your order?")
@@ -60,17 +74,22 @@ def pos():
     #process payment
     payments.Payment.payment(customer_order)
 def display_menu(my_coffee_menu):
+    """Displays the menu"""
     for i, (key, value) in enumerate(my_coffee_menu.items()):
         # print(i, key, value.name, value.description, value.price)
         print(f"{i}-{key} {value.name}- {value.description} \t${value.price:,.2f}")
 
 def get_item(my_coffee_menu):
+    """Receives users choice of item and allows user to quit, view menu or add items to menu"""
     choice = input("Please enter a number or letter. (quit/menu) ").upper()
+    #   this indicates user is finished entering items for the order
     if choice == "QUIT":
         return 0
+    #   this re displays the menu for the user
     if choice == "MENU":
         display_menu(my_coffee_menu)
         return 1
+    #   this allows user to add an item
     if choice == "ADD":
         print("Enter Item Letter...")
         my_index = input("> ").upper()
@@ -84,11 +103,13 @@ def get_item(my_coffee_menu):
         my_price = float(input("> "))
         coffee_menu[my_index] = product.Product(my_name, my_cat, my_desc, my_price)
         return 1
+    #   user can select menu item by number
     if choice.isdigit():
         choice = int(choice)
-        if choice < 0 or choice > 11:
+        if choice < 0 or choice > len(my_coffee_menu):
             print("Error: Invalid choice.")
             return 1
+        #   user has selected a valid option, find out how many that user wants
         else:
             for index, (key, value) in enumerate(my_coffee_menu.items()):
                 if index == choice or key == choice:
@@ -103,6 +124,7 @@ def get_item(my_coffee_menu):
             else:
                 print("Error: Invalid selection.")
                 return 1
+    #   this is where user selected item by letter, finds out how many of that item user wants
     elif choice.isalpha():
         if choice in my_coffee_menu:
             item = my_coffee_menu[choice]
@@ -131,6 +153,6 @@ def get_item(my_coffee_menu):
 ####################################################################################################
 #   Main code
 if __name__ == '__main__':
-    pos()
+    pos_loop()
     # validator.Validator.validate_pmt("Please select the payment type: (cash/card/check)")
     # payments.Payment.payment(test_order)
