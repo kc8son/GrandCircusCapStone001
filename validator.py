@@ -42,3 +42,18 @@ class Validator():
             if not min <= my_resp <= max:
                 print("Invalid entry, please try again...")
         return my_resp
+
+
+    def validate_cash(my_prompt, amount_due):
+        """This method validates the amount the user will be paying, it has to be greater than or equal to amount that is due"""
+        my_resp = amount_due - 5.0
+        while my_resp < amount_due:
+            print(amount_due)
+            my_resp = input(my_prompt)
+            try:
+                my_resp = float(my_resp)
+            except:
+                my_resp = amount_due - 5.0
+            if my_resp < amount_due:
+                print("Invalid entry, please try again...")
+        return my_resp

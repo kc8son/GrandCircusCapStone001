@@ -60,10 +60,11 @@ def card_pmt(my_charge):
 
 
 def cash_pmt(my_charge):
-    """This method will proceess a cash payment.  All we need to do is ask for the amount of
+    """This method will process a cash payment.  All we need to do is ask for the amount of
     money tendered and compute change."""
     print("Please enter the amount tendered:")
     cash_amt = float(input("> "))
+    # cash_amt = validator.Validator.validate_cash("Please enter the amount tendered:", my_charge)
     change = cash_amt - my_charge
     print(f"\n\n\n\n\n{cup}\nThank you for paying  ${cash_amt:,.2f} for your purchase of ${my_charge:,.2f}, you get ${change:,.2f} in change")
 
