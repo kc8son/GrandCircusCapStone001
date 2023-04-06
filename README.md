@@ -28,4 +28,9 @@ Files used:
 - Validate that the credit card expiration date is entered in proper format
 - If the subtotal is zero, skip payment options
 - Add validate_float to validator
-- 
+- Add validat_cash for cash payments
+- Allow repricing of an existing product
+       
+
+**Bug fixes:**
+- ~~customer_order[] list is not getting reset when starting a new order.~~

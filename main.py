@@ -17,6 +17,9 @@
 #     - Validate that the credit card number is 16 digits long
 #     - Validate that the expiration date is entered in proper format
 #
+#   Notes:
+#   Article about clearing s list: https://stackoverflow.com/questions/850795/different-ways-of-clearing-lists
+#
 ####################################################################################################
 #   imports
 import pdb
@@ -57,7 +60,7 @@ test_order = [
 def pos_loop():
     while True:
         total_price = 0
-        customer_order = []
+        customer_order[:] = []
         pos()
         input("Press enter to start your next order. ")
 
