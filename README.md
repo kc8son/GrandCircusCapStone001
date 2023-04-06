@@ -21,3 +21,8 @@ Files used:
     1. This file contains validator object which performs various validation.
        1. validating payment type
        
+
+**Future enhancements:**
+- For cash sales, validate that the amount paid is enough to cover the order
+- Validate that the credit card number is 16 digits long
+- Validate that the credit card expiration date is entered in proper format
